@@ -15,22 +15,19 @@
     <p>
         <input type="text" id="p1name" placeholder="Player 1 Name">
         <input type="text" id="p1database" placeholder="Presto">
-    </p>
-    <p>
+
         <input type="text" id="p2name" placeholder="Player 2 Name">
         <input type="text" id="p2database" placeholder="Snowflake">
-    </p>
-    <p>
+
         <input type="text" id="p3name" placeholder="Player 3 Name">
         <input type="text" id="p3database" placeholder="Zebra">
-    </p>
-    <p>
+
         <input type="button" id="raceButton" value="Race!">
     </p>
 
     <div style="position: relative">
-        <canvas id="track" width="600px" height="400px" style="position: absolute; border: 1px solid black; top:0px; left:0px"></canvas>
-        <div id="winnerDialog" style="display:none; position:absolute; z-index: 10">
+        <canvas id="track" width="1280" height="720px" style="background: 00ff00; position: absolute; border: 1px solid black; top:0px; left:0px;z-index: 1;"></canvas>
+        <div id="winnerDialog" style="display:none; position:absolute; z-index: 10; top:200px; left:200px; border: 1px solid black;">
             <p id="winnerMessage"></p>
             <div id="rickroll"></div>
         </div>
