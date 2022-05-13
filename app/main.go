@@ -101,16 +101,16 @@ func LoadAssetCatalog() AssetCatalog {
 	cat := AssetCatalog{}
 
 	cat.Ship1 = js.Global().Get("Image").New()
-	cat.Ship1.Set("src", "http://localhost:8888/img/Spaceship3.png")
+	cat.Ship1.Set("src", "https://raw.githubusercontent.com/mhat/hackday202205/main/img/Spaceship3.png")
 
 	cat.Ship2 = js.Global().Get("Image").New()
-	cat.Ship2.Set("src", "http://localhost:8888/img/Spaceship2.png")
+	cat.Ship2.Set("src", "https://raw.githubusercontent.com/mhat/hackday202205/main/img/Spaceship2.png")
 
 	cat.Ship3 = js.Global().Get("Image").New()
-	cat.Ship3.Set("src", "http://localhost:8888/img/Spaceship1.png")
+	cat.Ship3.Set("src", "https://raw.githubusercontent.com/mhat/hackday202205/main/img/Spaceship1.png")
 
 	cat.Background = js.Global().Get("Image").New()
-	cat.Background.Set("src", "http://localhost:8888/img/Background.png")
+	cat.Background.Set("src", "https://raw.githubusercontent.com/mhat/hackday202205/main/img/Background.png")
 
 	time.Sleep(1 * time.Second)
 	return cat
