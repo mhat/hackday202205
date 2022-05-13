@@ -51,7 +51,7 @@ type step struct {
 func FetchRaceData() race {
 	race := race{}
 	fmt.Printf("Fetching data...\n")
-	res, err := http.DefaultClient.Get("/racedata.csv")
+	res, err := http.DefaultClient.Get("http://localhost:8888/racedata.csv")
 	if err != nil {
 		fmt.Printf("Error Fetching Racedata :( %+v\n", err)
 	}
@@ -101,16 +101,16 @@ func LoadAssetCatalog() AssetCatalog {
 	cat := AssetCatalog{}
 
 	cat.Ship1 = js.Global().Get("Image").New()
-	cat.Ship1.Set("src", "img/Spaceship3.png")
+	cat.Ship1.Set("src", "http://localhost:8888/img/Spaceship3.png")
 
 	cat.Ship2 = js.Global().Get("Image").New()
-	cat.Ship2.Set("src", "img/Spaceship2.png")
+	cat.Ship2.Set("src", "http://localhost:8888/img/Spaceship2.png")
 
 	cat.Ship3 = js.Global().Get("Image").New()
-	cat.Ship3.Set("src", "img/Spaceship1.png")
+	cat.Ship3.Set("src", "http://localhost:8888/img/Spaceship1.png")
 
 	cat.Background = js.Global().Get("Image").New()
-	cat.Background.Set("src", "img/Background.png")
+	cat.Background.Set("src", "http://localhost:8888/img/Background.png")
 
 	time.Sleep(1 * time.Second)
 	return cat
@@ -176,7 +176,7 @@ func RunRace(cat AssetCatalog, race race, players []*player) {
 	wg.Add(1)
 	stepIdx := 0
 	stepId := js.Global().Call("setInterval", js.FuncOf(func(this js.Value, args []js.Value) interface{} {
-		for j := 0; j <= 500; j++ {
+		for j := 0; j <= 100; j++ {
 			if stepIdx >= len(race.steps)-1 {
 				fmt.Printf("Stepper Complete after %d out of %d!\n", stepIdx, len(race.steps)-1)
 				defer wg.Done()
